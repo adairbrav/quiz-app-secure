@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+
+{% block title %}page 4--Now we know everything!{% endblock %}
+
+{% block content %}
+  <h1>Now I know:</h1>
+
+<ul>
+ <li> you choose : {{ session['firstName'] }} </li>
+ <p>the correct answer is A. Pine </p>
+ 
+ <li> you choose : {{ session['favoriteColor'] }} </li>
+ <p>the correct answer is C. Clearcutting</p>
+ 
+ <li> you choose : {{ session['film1'] }} </li>
+ <p>the correct answer is D. Sawmilling</p>
+ 
+ 
+</ul>
+
+
+
+{% endblock %}

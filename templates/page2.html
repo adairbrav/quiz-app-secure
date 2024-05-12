@@ -1,0 +1,24 @@
+{% extends "layout.html" %}
+
+{% block title %}Page 2: Ask for your favorite color{% endblock %}
+
+{% block content %}
+  <h1>Page 2: Ask </h1>
+
+ <form action={{ url_for("renderPage3") }} method="POST">
+ 2.Which management technique involves removing all trees from a specific area to create open space for new growth?:<br>
+  <input type="text" name="favoriteColor">
+  <input type="submit" value="Submit">
+  
+   A. Thinning <br>
+   B. Selective logging <br>
+   C. Clearcutting <br>
+   D. Shelterwood cutting <br>
+  
+  
+  
+ </form> 
+
+
+
+{% endblock %}
