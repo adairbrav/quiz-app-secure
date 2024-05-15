@@ -3,14 +3,24 @@
 {% block title %}Page 1: Name{% endblock %}
 
 {% block content %}
-  <h1>Page 1: What is your name?</h1>
 
+<head>
+<style>
+div.a {
+  text-align: center;
+}
+</style>
+</head>
+<body>
+
+<div class="a">
+  <h1>Page 1: Quiz </h1>
+  
  <form action={{ url_for("renderPage2") }} method="POST"> 
  1.What is the most common coniferous tree species used for timber production in North America?:<br>
- 
-  <input type="text" name="firstName">
- 
+  <input type="text" name="Questions1">
   <input type="submit" value="Submit">
+  <p>type your answer above</p>
   
   A. Pine <br>
   B. Oak <br>

@@ -25,23 +25,36 @@ def startOver():
 @app.route('/page1')
 def renderPage1():
     return render_template('page1.html')
-
+   
 @app.route('/page2',methods=['GET','POST'])
 def renderPage2():
-    session["firstName"]=request.form['firstName']
-    return render_template('page2.html')
+    if "Questions1"not in session:
+        session["Questions1"]=request.form['Questions1']
+        return render_template('page2.html')
+    return render_template('error page.html')   
 
 @app.route('/page3',methods=['GET','POST'])
 def renderPage3():
-    session["favoriteColor"]=request.form['favoriteColor']
-    return render_template('page3.html')
+    if "Questions2"not in session:
+        session["Questions2"]=request.form['Questions2']
+        return render_template('page3.html')
+    return render_template('error page.html')    
     
- @app.route('/page4',methods=['GET','POST'])
+@app.route('/page4',methods=['GET','POST'])
 def renderPage4():
-    session["film1"]=request.form['film1']
-    return render_template('page4.html')   
+    if "Questions3"not in session:
+        session["Questions3"]=request.form['Questions3']
+        score=0
+        if session["Questions1"] == "a":
+            score+=1
+        if session["Questions2"] == "c":
+            score+=1
+        if session["Questions3"] == "d":
+            score+=1
+        return render_template('page4.html',score=score)   
+    return render_template('error page.html') 
     
-    
+     
      
 if __name__=="__main__":
     app.run(debug=False)                                                                                                                                                              

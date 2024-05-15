@@ -48,6 +48,5 @@ $(document).ready(function() {
         finish = true;
       },10);
   }
-  
 });
 
